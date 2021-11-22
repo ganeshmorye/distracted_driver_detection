@@ -59,7 +59,6 @@ Also included in the dataset are the following files:
 # Modeling Methodology
 * **Training, Validation Sets:**
 To evaluate model training, we split the training images into training and validation sets. We initially used a random train-test-split to generate training and validation sets. This caused the trained model to be significantly overfit. We then used [GroupKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GroupKFold.html) and grouped on the driver id. This was done to ensure that each driver only appears in either the training or the validation set. This step helped reduce model overfitting leading to a more robust model. 
-<br>
 
 * **Model Architecture:**
 Convolutional neural networks (CNN) are similar to ordinary neural networks but they are customized to use images as inputs. We tried different CNN model architectures for evaluating model performance.
@@ -86,10 +85,13 @@ We used augmentation only on the training set (not validation set) and trained m
 
   Class labels c8 and c9 have the lowest f1-scores and class labels c3 and c7 have the highest f1-scores
   ![Classification Report for VGG16 Model](./data/results/Classification_report.png)
+  **Classification Report for VGG16 Model**<br>
   ![Confusion Matrix for VGG16 Model](./data/results/Confusion_Matrix.png)
+  **Confusion Matrix for VGG16 Model**<br>
 
   Following figure shows a collection of sample images where the model predictions were wrong. The title of each image shows the information of the original label, prediction and confidence value of that prediction as determined by the model
   ![Mislabeled Predictions](./data/results/Mislabeled_predictions.png)
+  **Mislabeled Predictions Sample**<br>
 # Conclusions
 - Use of pre-trained models significantly improved the predictions of the CNN model
 - A CNN model using a VGG16 pre-trained model gave log loss for testing dataset on Kaggle of 0.73

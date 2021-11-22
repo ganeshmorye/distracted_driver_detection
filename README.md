@@ -57,11 +57,11 @@ Also included in the dataset are the following files:
 [Back to Top](#Contents)
 
 # Modeling Methodology
-* Training, Validation Sets:
+* **Training, Validation Sets:**
 To evaluate model training, we split the training images into training and validation sets. We initially used a random train-test-split to generate training and validation sets. This caused the trained model to be significantly overfit. We then used [GroupKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GroupKFold.html) and grouped on the driver id. This was done to ensure that each driver only appears in either the training or the validation set. This step helped reduce model overfitting leading to a more robust model. 
 <br>
 
-* Model Architecture:
+* **Model Architecture:**
 Convolutional neural networks (CNN) are similar to ordinary neural networks but they are customized to use images as inputs. We tried different CNN model architectures for evaluating model performance.
 	* Custom CNN Model
   	This model has 2 Convolutional (Conv) (Conv2D + MaxPooling2D) layers, followed by 2 Fully Connected (FC) layers and a final SoftMax activation layer for classification. 	All layers use ReLU activation except where mentioned.
@@ -70,7 +70,7 @@ Convolutional neural networks (CNN) are similar to ordinary neural networks but 
 	* EfficientNetB0
 	Use pre-trained EfficientNetB0 model for transfer learning, followed by 1 GlobalAveragePooling2D, 1 BatchNormalization and 1 Dropout layer.This is followed by a final SoftMax activation layer for classification.
 
-* Image Augmentation:
+* **Image Augmentation:**
 Image augmentation applies different transformations like rotation, shear, horizontal and vertical offsets etc. to the original images resulting in multiple transformed copies of the same image. These techniques expand the size of the dataset and incorporate variation in the dataset which allows model training to generalize better on unseen data. 
 We used augmentation only on the training set (not validation set) and trained models with / without augmentation. This was done using the [ImageDataGenerator](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator) class in Keras.
 

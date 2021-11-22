@@ -85,7 +85,8 @@ We used augmentation only on the training set (not validation set) and trained m
 
   Class labels c8 and c9 have the lowest f1-scores and class labels c3 and c7 have the highest f1-scores
   ![Classification Report for VGG16 Model](./data/results/Classification_report.png)
-  **Classification Report for VGG16 Model**<br>
+  **Classification Report for VGG16 Model**<br><br>
+
   ![Confusion Matrix for VGG16 Model](./data/results/Confusion_Matrix.png)
   **Confusion Matrix for VGG16 Model**<br>
 

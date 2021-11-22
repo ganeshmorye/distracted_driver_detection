@@ -1,8 +1,8 @@
+<!-- omit in toc -->
 # State Farm Distracted Driver Detection
 
+<!-- omit in toc -->
 # Contents
-- [State Farm Distracted Driver Detection](#state-farm-distracted-driver-detection)
-- [Contents](#contents)
 - [Problem Statement](#problem-statement)
 - [Datasets](#datasets)
 - [Observations from EDA](#observations-from-eda)
@@ -60,6 +60,7 @@ Also included in the dataset are the following files:
 * Training, Validation Sets:
 To evaluate model training, we split the training images into training and validation sets. We initially used a random train-test-split to generate training and validation sets. This caused the trained model to be significantly overfit. We then used [GroupKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GroupKFold.html) and grouped on the driver id. This was done to ensure that each driver only appears in either the training or the validation set. This step helped reduce model overfitting leading to a more robust model. 
 <br>
+
 * Model Architecture:
 Convolutional neural networks (CNN) are similar to ordinary neural networks but they are customized to use images as inputs. We tried different CNN model architectures for evaluating model performance.
 	* Custom CNN Model
